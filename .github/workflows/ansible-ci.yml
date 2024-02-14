@@ -1,0 +1,23 @@
+# This workflow template should be in every ansible code repository so that all changes are validated using the
+# Ansible CI Base workflow.  Please do not remove or change anything above the 'Add  additional jobs below ...' line.
+
+name: Ansible CI
+
+on: 
+  push:           # All branches, ignore tag pushes.
+    branches:
+      - '*'
+    tags-ignore:
+      - '*'
+  pull_request:   # All PRs
+
+jobs:
+  run-ci-base:
+    uses: alightengineering/ansible-automation/.github/workflows/ansible-ci.yml@1
+    secrets: inherit
+
+#############################################
+##                                         ##
+##  Add additional jobs below, if needed.  ##
+##                                         ##
+#############################################
